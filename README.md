@@ -114,7 +114,7 @@ In our project Smart Cart Analytics, we tackle Exploratory Data Analysis (EDA) i
 
 Next, we move into a detailed examination of the data, using graphs and charts to spot trends and investigate how different factors, like reorder rates and peak ordering times, interact. We combine Product, Aisles and Departments data sets for its convenience.
 
-Key takeaways from our EDA include:
+## Key takeaways from our EDA include:
 
 Items added to the cart in the first sequels are often bought again later.
 The highest number of repeat purchases occurs at certain regular times, indicating the presence of shopping habits.
@@ -122,6 +122,21 @@ Products from certain areas of the store are bought again more often, showing wh
 As customers keep ordering over time, they tend to focus on a smaller set of familiar products.
 The chance of buying a product again goes down as the number of different items in the cart increases, likely due to the greater variety of choices.
 These early observations are crucial, forming the basis for our predictive models and helping us make smart decisions to improve customer interaction and optimize inventory on Instacart.
+
+## Data Download, Cleaning & Exploratory Data Analysis.Part 2
+
+We created 2 datasets separated per prior/train orders and combined it with the product information files. Thus, we obtained final versions of dataframe that we will be using for further data analysis and modeling. 
+We continued with the EDA focusing in aisles and department distributions, looking into most frequent and most reordered items. Analyzed items reorder probability together with its sequence in the list and frequency. Found Top 25 Products with Highest Reorder Ratio from the top 25% most frequently bought products.
+As a part of EDA, we explored corelations of the variables with the correlation matrix.
+As for Statistical Analysis- premodeling, we ran a logistic regression and built classification report together with the confusion matrix.
+
+The model  obtained is better at identifying products that will be reordered than those that will not. This could be because there are more reordered instances in the dataset (evidence of class imbalance), or the features are more predictive for the reordered class. The relatively high number of False Positives (products predicted as reordered but actually not) suggests that the model might be erring on the side of predicting reorder.
+
+This could be addressed by looking into the model's threshold for classification or gathering more distinguishing features.
+
+The accuracy is moderately good, but there is definitely room for improvement, especially in terms of precision and recall for the not reordered class.
+
+Further analysis is needed as the most part of the data is in numerical format. Next step would be run a bag of words in order to convert non-numeric values and include it into our model.
 
 ## Modeling
 
